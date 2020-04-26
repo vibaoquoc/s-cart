@@ -45,11 +45,8 @@ class ShopOrderTotal extends Model
         $total = $subtotal;
         foreach ($objects as $key => $object) {
             if (is_array($object) && $object) {
-                $object['value'] = sc_currency_value($object['value']);
-                $object['text'] = sc_currency_render($object['value']);
                 if ($object['code'] != 'received') {
-                    $total += sc_currency_value($object['value']);
-                }
+                    $total += $object['value'];                }
             } else {
                 unset($objects[$key]);
             }
@@ -104,8 +101,8 @@ class ShopOrderTotal extends Model
             $arrShipping = [
                 'title' => $returnModuleShipping['title'],
                 'code' => 'shipping',
-                'value' => $returnModuleShipping['value'],
-                'text' => $returnModuleShipping['value'],
+                'value' => sc_currency_value($returnModuleShipping['value']),
+                'text' => sc_currency_render($returnModuleShipping['value']),
                 'sort' => self::POSITION_SHIPPING_METHOD,
             ];
         }
@@ -145,8 +142,8 @@ class ShopOrderTotal extends Model
                 $totalMethod[] = [
                     'title' => $returnModuleTotal['title'],
                     'code' => 'discount',
-                    'value' => $returnModuleTotal['value'],
-                    'text' => $returnModuleTotal['value'],
+                    'value' => sc_currency_value($returnModuleTotal['value']),
+                    'text' => sc_currency_render($returnModuleTotal['value']),
                     'sort' => self::POSITION_TOTAL_METHOD,
                 ];
             }
