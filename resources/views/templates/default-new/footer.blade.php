@@ -23,11 +23,16 @@
     <div class="footer-top">
         <div class="container-sm container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 logo">
+                <div class="col-12 col-sm-6 col-md-3 logo">
                     <a href="{{ route('home') }}">
                         <img src="{{  asset(sc_store('logo')) }}" alt="{{ sc_store('title') }}">
                     </a>
-                    <p>{{ sc_store('title') }}</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="footer-title">
+                        {{ trans('front.about') }}
+                    </div>
+                    <p style="color: rgba(0, 0, 0, 0.4);">{{ sc_store('description') }}</p>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="footer-title">
@@ -46,7 +51,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="footer-title">
-                        {{ trans('front.about') }}
+                        {{ trans('front.contact') }}
                     </div>
                     <ul>
                         <li>
@@ -61,7 +66,7 @@
                         <li>
                             <ul class="social-network">
                                 <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.facebook.com/bammvn/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -82,12 +87,8 @@
     <div class="footer-bottom">
         <div class="container-sm container">
             <div class="row">
-                <div class="col-12 col-sm-8 col-md-8">Copyright © {{date('Y')}} <a
-                        href="{{ route('home') }}">{{ sc_store('title') }} </a> Inc. All rights reserved.</div>
-                <div class="col-12 col-sm-4 col-md-4">Power by <a
-                        href="{{ config('scart.homepage') }}">{{ config('scart.name') }}
-                        {{ config('scart.sub_version') }}</a>. Hosted by <a target="_blank"
-                        href="https://giaiphap247.com">GiaiPhap247</a></div>
+                <div class="col-12 col-sm-12 col-md-12" style="text-align:center;">Copyright © {{date('Y')}} <a
+                        href="{{ route('home') }}">{{ sc_store('title') }} </a>. All rights reserved.</div>
             </div>
         </div>
     </div>

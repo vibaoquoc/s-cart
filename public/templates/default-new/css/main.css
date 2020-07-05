@@ -1377,6 +1377,7 @@ h1.title-page {
     padding-left: 12px;
     margin-bottom: 15px;
     position: relative;
+    margin-top: 10px;
 }
 
 @media(max-width: 756px) {
