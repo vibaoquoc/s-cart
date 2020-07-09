@@ -352,9 +352,15 @@
                             <label for="cost" class="col-sm-2 col-form-label">{{ trans('product.cost') }}</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-                                    <input type="number" style="width: 100px;" id="cost" name="cost"
+                                    <span class="input-group-addon">USD<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
+                                    <input autocomplete="off" type="number" style="width: 100px;" id="cost" name="cost"
                                         value="{!! old('cost',$product->cost) !!}" class="form-control input-sm cost"
+                                        placeholder="" />&nbsp;(23,500đ)
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">VNĐ<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
+                                    <input autocomplete="off" type="number" style="width: 100px;" id="cost_vnd"
+                                        value="" class="form-control input-sm cost"
                                         placeholder="" />
                                 </div>
                                 @if ($errors->has('cost'))
@@ -375,9 +381,15 @@
                             <label for="price" class="col-sm-2 col-form-label">{{ trans('product.price') }}</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+                                    <span class="input-group-addon">USD<!-- <i class="fa fa-pencil fa-fw"></i> --></span>
                                     <input type="number" style="width: 100px;" id="price" name="price"
                                         value="{!! old('price',$product->price) !!}" class="form-control input-sm price"
+                                        placeholder="" />&nbsp;(23,500đ)
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">VNĐ<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
+                                    <input type="number" style="width: 100px;" id="price_vnd"
+                                        value="" class="form-control input-sm cost"
                                         placeholder="" />
                                 </div>
                                 @if ($errors->has('price'))
@@ -1064,6 +1076,25 @@ $('textarea.editor').ckeditor(
         filebrowserWindowHeight: '500'
     }
 );
+
+$("#cost").on("keyup",function (a){ 
+  $("#cost_vnd").val((Math.round((parseFloat($("#cost").val()) * 23500)/1000)*1000));
+});
+$("#cost_vnd").val((Math.round((parseFloat($("#cost").val()) * 23500)/1000)*1000));
+
+$("#cost_vnd").on("keyup",function (a){ 
+  $("#cost").val((parseFloat($("#cost_vnd").val()) / 23500).toFixed(2));
+});
+
+$("#price").on("keyup",function (a){ 
+  $("#price_vnd").val((Math.round((parseFloat($("#price").val()) * 23500)/1000)*1000));
+});
+$("#price_vnd").val((Math.round((parseFloat($("#price").val()) * 23500)/1000)*1000));
+
+$("#price_vnd").on("keyup",function (a){ 
+  $("#price").val((parseFloat($("#price_vnd").val()) / 23500).toFixed(2));
+});
+
 </script>
 
 @endpush
