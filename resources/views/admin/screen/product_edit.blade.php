@@ -352,10 +352,10 @@
                             <label for="cost" class="col-sm-2 col-form-label">{{ trans('product.cost') }}</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
-                                    <span class="input-group-addon">USD<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                     <input step="0.01" autocomplete="off" type="number" style="width: 100px;" id="cost" name="cost"
                                         value="{!! old('cost',$product->cost) !!}" class="form-control input-sm cost"
-                                        placeholder="" />&nbsp;(23,500đ)
+                                        placeholder="" />
                                 </div>
                                 @if ($errors->has('cost'))
                                 <span class="help-block">
@@ -375,10 +375,10 @@
                             <label for="price" class="col-sm-2 col-form-label">{{ trans('product.price') }}</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
-                                    <span class="input-group-addon">USD<!-- <i class="fa fa-pencil fa-fw"></i> --></span>
+                                    <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                     <input step="0.01" autocomplete="off" type="number" style="width: 100px;" id="price" name="price"
                                         value="{!! old('price',$product->price) !!}" class="form-control input-sm price"
-                                        placeholder="" />&nbsp;(23,500đ)
+                                        placeholder="" />
                                 </div>
                                 @if ($errors->has('price'))
                                 <span class="help-block">
