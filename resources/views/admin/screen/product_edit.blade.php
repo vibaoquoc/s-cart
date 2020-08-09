@@ -357,12 +357,6 @@
                                         value="{!! old('cost',$product->cost) !!}" class="form-control input-sm cost"
                                         placeholder="" />&nbsp;(23,500đ)
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">VNĐ<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
-                                    <input autocomplete="off" type="number" style="width: 100px;" id="cost_vnd"
-                                        value="" class="form-control input-sm cost"
-                                        placeholder="" />
-                                </div>
                                 @if ($errors->has('cost'))
                                 <span class="help-block">
                                     <i class="fa fa-info-circle"></i> {{ $errors->first('cost') }}
@@ -385,12 +379,6 @@
                                     <input step="0.01" autocomplete="off" type="number" style="width: 100px;" id="price" name="price"
                                         value="{!! old('price',$product->price) !!}" class="form-control input-sm price"
                                         placeholder="" />&nbsp;(23,500đ)
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">VNĐ<!-- <i class="fa fa-pencil fa-fw"> --></i></span>
-                                    <input type="number" autocomplete="off" style="width: 100px;" id="price_vnd"
-                                        value="" class="form-control input-sm cost"
-                                        placeholder="" />
                                 </div>
                                 @if ($errors->has('price'))
                                 <span class="help-block">
@@ -1077,23 +1065,6 @@ $('textarea.editor').ckeditor(
     }
 );
 
-$("#cost").on("keyup",function (a){ 
-  $("#cost_vnd").val((Math.round((parseFloat($("#cost").val()) * 23500)/1000)*1000));
-});
-$("#cost_vnd").val((Math.round((parseFloat($("#cost").val()) * 23500)/1000)*1000));
-
-$("#cost_vnd").on("keyup",function (a){ 
-  $("#cost").val((parseFloat($("#cost_vnd").val()) / 23500).toFixed(2));
-});
-
-$("#price").on("keyup",function (a){ 
-  $("#price_vnd").val((Math.round((parseFloat($("#price").val()) * 23500)/1000)*1000));
-});
-$("#price_vnd").val((Math.round((parseFloat($("#price").val()) * 23500)/1000)*1000));
-
-$("#price_vnd").on("keyup",function (a){ 
-  $("#price").val((parseFloat($("#price_vnd").val()) / 23500).toFixed(2));
-});
 
 </script>
 

@@ -164,7 +164,7 @@ $productRelation: no paginate
         </ul>
     </div>
     <div class="col-12 tab-content">
-        <div class="tab-pane fade show active in" id="product-detail-content">
+        <div class="tab-pane fade show active in" id="product-detail-content" style="font-size: 15px;padding: 20px;line-height: 25px;">
             {!! sc_html_render($product->content) !!}
             <div class="clearfix"></div>
         </div>

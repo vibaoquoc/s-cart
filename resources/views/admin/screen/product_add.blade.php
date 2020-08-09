@@ -347,7 +347,7 @@
                                 </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> 
                         {{--// select supplier --}}
 @endif
 
