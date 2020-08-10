@@ -839,7 +839,7 @@ header .header-bottom .navbar .dropdown .dropdown-menu .dropdown-item:focus {
 }
 
 .product-item .product-main {
-    padding: 10px 15px;
+    padding: 0px 0px;
     color: #262b2f;
     border: 1px solid #F0F0E9;
     text-align: center;
