@@ -562,7 +562,7 @@ class ShopProduct extends Model
     public function getProductLatest() {
         $this->setStatus(1);
         $this->setLimit(10);
-        $this->setSort(['id', 'desc']);
+        $this->setSort(['sort', 'asc']);
         return $this;
     }
 
